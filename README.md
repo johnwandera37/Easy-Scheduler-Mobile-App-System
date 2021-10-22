@@ -32,7 +32,7 @@ Ideally, people who have busy schedule or tend to forget things easily should ha
 The main objective of this project is to develop an android based alarm system that has the capabilities of scheduling or automating calls, messages and opening of links at specified time.
 This can be broken down into:
 
-1. To develop an alarm module that enable users to set normal alarms for daily use. For example, waking up alarms and.
+1. To develop an alarm module that enable users to set normal alarms for daily use. For example, waking up alarms.
 2. To develop a link scheduler module that enables users to set links to open in the future.
 3. To develop a message scheduler module that   enables users to schedule messages so as to be sent in the future.
 4. To develop a call scheduler module that enables users to schedule calls so as to call someone in the future.
