@@ -21,7 +21,11 @@ This is a scheduling app that  enables a user to schedule a call, message, link 
       - [Alarm](#alarm)
   - [Software Design Description](#software-design-description)
     - [User Design Interface](#user-design-interface)
-    - [Home landing interface](#home-landing-interface)
+      - [Home landing Screen](#home-landing-screen)
+      - [Alarm Screen](#alarm-screen)
+      - [SMS Screen](#sms-screen)
+      - [Call Screen](#call-screen)
+      - [Link Screen](#link-screen)
 
 ## Problem Statement
 
@@ -115,4 +119,28 @@ The alarm module consists of the following functionalities.
 
 ### User Design Interface
 
-### Home landing interface
+#### Home landing Screen
+
+The home screen when the app is launched is expected to look as shown below.
+Home Screen Design Light:
+![Home Screen](./prototype/Home-screen.png)
+
+#### Alarm Screen
+
+Alarm Screen Design:
+![Alarm Screen](./prototype/Alarm-screen.png)
+
+#### SMS Screen
+
+SMS Screen Design:
+![SMS Screen](./prototype/SMS-screen.png)
+
+#### Call Screen
+
+Call Screen Design:
+![Call Screen](./prototype/Call-screen.png)
+
+#### Link Screen
+
+Link Screen Design:
+![Link Screen](./prototype/Link-screen.png)
