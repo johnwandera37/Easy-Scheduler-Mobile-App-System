@@ -122,7 +122,8 @@ The alarm module consists of the following functionalities.
 #### Home landing Screen
 
 The home screen when the app is launched is expected to look as shown below.
-Home Screen Design Light:
+
+Home Screen Design:
 ![Home Screen](./prototype/Home-screen.png)
 
 #### Alarm Screen
