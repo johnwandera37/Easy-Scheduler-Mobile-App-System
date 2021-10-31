@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">EasyScheduler</string>
+    <string name="alarm">ALARM</string>
+    <string name="sms">SMS</string>
+    <string name="call">CALL</string>
+    <string name="link">LINK</string>
+    <string name="enter_phone_number">enter phone number</string>
+    <string name="type_your_message">type your message</string>
+    <string name="send">send</string>
+    <string name="call_now">Call Now</string>
+    <string name="enter_phone_digits">enter phone digits</string>
+    <string name="welcome_nchoose_what_you_want_to_schedule">Welcome \nchoose what you want to schedule</string>
+</resources>
