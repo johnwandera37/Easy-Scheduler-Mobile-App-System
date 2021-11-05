@@ -18,7 +18,7 @@ This is a scheduling app that  enables a user to schedule a call, message, link 
       - [Message scheduler](#message-scheduler)
       - [Call scheduler](#call-scheduler)
       - [Link scheduler](#link-scheduler)
-      - [Alarm](#alarm)
+      - [Alarm scheduler](#alarm-scheduler)
   - [Software Design Description](#software-design-description)
     - [User Design Interface](#user-design-interface)
       - [Home landing Screen](#home-landing-screen)
@@ -26,6 +26,11 @@ This is a scheduling app that  enables a user to schedule a call, message, link 
       - [SMS Screen](#sms-screen)
       - [Call Screen](#call-screen)
       - [Link Screen](#link-screen)
+    - [Database Design](#database-design)
+      - [Link](#link)
+      - [Alarm](#alarm)
+      - [Message](#message)
+      - [Call](#call)
 
 ## Problem Statement
 
@@ -107,12 +112,12 @@ This module consists of the following functional requirements.
 - It should be able to open the link with the default link handler app, default browser set by the user.
 - It should be able to read the phone states and provide an alert once a process is completed.
 
-#### Alarm
+#### Alarm scheduler
 
 The alarm module consists of the following functionalities.
 
 - It should enable the user to set a normal alarm for waking up or other activities.
-- should be able to cancel an alarm.
+- it should be able to access the default alarm app and set an alarm
 - It should be able to read the phone state like date and time of the device
 
 ## Software Design Description
@@ -145,3 +150,30 @@ Call Screen Design:
 
 Link Screen Design:
 ![Link Screen](./prototype/Link-screen.png)
+
+### Database Design
+
+#### Link
+
+- description - information about the link for e.g name of the link
+- link - the link itself, can be a http type and can be copied here
+- date and time - date and time to be selected from a time picker
+  
+#### Alarm
+
+- description - information about the alarm for example 5.pm alarm
+- time - to be selected from a time picker
+
+#### Message
+
+- description - information about the message e.g sending to Joe
+- contacts - recipient contact
+- message - sms to be sent
+- date and time - when to be scheduled
+
+#### Call
+
+- description - call information
+- contact - recipient contact
+- date and time - when to be scheduled
+  
