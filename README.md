@@ -135,7 +135,7 @@ Home Screen Design:
 #### Alarm Screen
 
 Alarm Screen Design:
-![Alarm Screen](./prototype/Alarm.png)
+![Alarm Screen](./prototype/ALARM.png)
 
 #### SMS Screen
 
@@ -145,12 +145,12 @@ SMS Screen Design:
 #### Call Screen
 
 Call Screen Design:
-![Call Screen](./prototype/Call.png)
+![Call Screen](./prototype/CALL.png)
 
 #### Link Screen
 
 Link Screen Design:
-![Link Screen](./prototype/Link.png)
+![Link Screen](./prototype/LINK.png)
 
 ### Database Design
 
