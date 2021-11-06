@@ -126,30 +126,31 @@ The alarm module consists of the following functionalities.
 
 #### Home landing Screen
 
-The home screen when the app is launched is expected to look as shown below.
+The home screen when the app is launched is expected to look as shown below. When the 'NEW' button is selected in the Alarm, Call, SMS, or Link, the attributes like description, select time and date, contact, link and message appear where a user inputs data and then 'SET' or 'SCHEDULED' button is clicked to add a thread in a database. The thread can be edited or cancelled on long press.
 
 Home Screen Design:
-![Home Screen](./prototype/Home-screen.png)
+
+![Home Screen](./prototype/Home.png)
 
 #### Alarm Screen
 
 Alarm Screen Design:
-![Alarm Screen](./prototype/Alarm-screen.png)
+![Alarm Screen](./prototype/Alarm.png)
 
 #### SMS Screen
 
 SMS Screen Design:
-![SMS Screen](./prototype/SMS-screen.png)
+![SMS Screen](./prototype/SMS.png)
 
 #### Call Screen
 
 Call Screen Design:
-![Call Screen](./prototype/Call-screen.png)
+![Call Screen](./prototype/Call.png)
 
 #### Link Screen
 
 Link Screen Design:
-![Link Screen](./prototype/Link-screen.png)
+![Link Screen](./prototype/Link.png)
 
 ### Database Design
 
