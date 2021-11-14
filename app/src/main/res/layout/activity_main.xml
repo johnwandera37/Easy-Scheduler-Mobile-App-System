@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,84 +7,40 @@
     tools:context=".MainActivity">
 
 
-    <TextView
-        android:id="@+id/WelcomeMessage"
-        android:layout_width="370dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="45dp"
-        android:background="@drawable/circular_corners"
-        android:backgroundTint="#E0E5E8"
-        android:layout_marginStart="15dp"
-        android:padding="5dp"
-        android:text="@string/welcome_nchoose_what_you_want_to_schedule"
-        android:textColor="#000000"
-        android:textSize="24sp"
-        android:textStyle="bold" />
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <Button
-        android:id="@+id/AlarmActivity"
-        android:layout_width="300dp"
-        android:layout_height="73dp"
-        android:layout_below="@id/WelcomeMessage"
-        android:layout_alignParentTop="true"
-        android:layout_centerInParent="true"
-        android:layout_gravity="center"
-        android:layout_marginTop="180dp"
-        android:background="@drawable/circular_corners"
-        android:drawableLeft="@drawable/ic_baseline_access_alarm_24"
-        android:drawablePadding="5dp"
-        android:text="@string/alarm"
-        android:textAlignment="center"
-        android:textColor="#ADE5F9"
-        android:textSize="19sp" />
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/topAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"/>
 
-    <Button
-        android:id="@+id/MessageActivity"
-        android:layout_width="300dp"
-        android:layout_height="73dp"
-        android:layout_below="@+id/AlarmActivity"
-        android:layout_alignParentTop="true"
-        android:layout_centerInParent="true"
-        android:layout_gravity="center"
-        android:layout_marginTop="280dp"
-        android:background="@drawable/circular_corners"
-        android:drawableLeft="@drawable/ic_baseline_message_24"
-        android:drawablePadding="5dp"
-        android:text="@string/sms"
-        android:textColor="#ADE5F9"
-        android:textSize="19sp" />
-
-    <Button
-        android:id="@+id/CallActivity"
-        android:drawableLeft="@drawable/ic_baseline_call_24"
-        android:background="@drawable/circular_corners"
-        android:drawablePadding="5dp"
-        android:layout_width="300dp"
-        android:layout_height="73dp"
-        android:layout_below="@id/MessageActivity"
-        android:layout_alignParentTop="true"
-        android:layout_centerInParent="true"
-        android:layout_gravity="center"
-        android:layout_marginTop="380dp"
-        android:text="@string/call"
-        android:textColor="#ADE5F9"
-        android:textSize="19sp" />
+    </com.google.android.material.appbar.AppBarLayout>
 
 
-    <Button
-        android:id="@+id/LinkActivity"
-        android:drawableLeft="@drawable/ic_baseline_insert_link_24"
-        android:background="@drawable/circular_corners"
-        android:drawablePadding="5dp"
-        android:layout_width="300dp"
-        android:layout_height="73dp"
-        android:layout_below="@id/CallActivity"
-        android:layout_alignParentTop="true"
-        android:layout_centerInParent="true"
-        android:layout_gravity="center"
-        android:layout_marginTop="480dp"
-        android:text="@string/link"
-        android:textColor="#ADE5F9"
-        android:textSize="19sp" />
 
-</RelativeLayout>
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/bottomAppBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:fadeScrollbars="true"
+        app:hideOnScroll="true">
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNavigationView"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            app:menu="@menu/bottom_menu"
+            android:background="@android:color/transparent"
+            android:layout_marginEnd="20dp"
+            app:itemIconSize="27dp"
+            app:itemTextColor="@color/bottom_item_color"
+            app:itemIconTint="@color/bottom_item_color"
+            app:labelVisibilityMode="labeled"/>
+
+    </com.google.android.material.bottomappbar.BottomAppBar>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -4,15 +4,22 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/jpopp/AndroidStudioProjects/EasyScheduler/app/src/main/res/drawable/circular_corners.xml" value="0.21" />
+        <entry key="..\:/Users/jpopp/AndroidStudioProjects/EasyScheduler/app/src/main/res/drawable/ic_alarm.xml" value="0.18697916666666667" />
         <entry key="..\:/Users/jpopp/AndroidStudioProjects/EasyScheduler/app/src/main/res/drawable/ic_baseline_access_alarm_24.xml" value="0.18697916666666667" />
         <entry key="..\:/Users/jpopp/AndroidStudioProjects/EasyScheduler/app/src/main/res/drawable/ic_baseline_call_24.xml" value="0.18697916666666667" />
         <entry key="..\:/Users/jpopp/AndroidStudioProjects/EasyScheduler/app/src/main/res/drawable/ic_baseline_insert_link_24.xml" value="0.18697916666666667" />
         <entry key="..\:/Users/jpopp/AndroidStudioProjects/EasyScheduler/app/src/main/res/drawable/ic_baseline_message_24.xml" value="0.18697916666666667" />
+        <entry key="..\:/Users/jpopp/AndroidStudioProjects/EasyScheduler/app/src/main/res/drawable/ic_call.xml" value="0.18697916666666667" />
+        <entry key="..\:/Users/jpopp/AndroidStudioProjects/EasyScheduler/app/src/main/res/drawable/ic_launcher_background.xml" value="0.18697916666666667" />
         <entry key="..\:/Users/jpopp/AndroidStudioProjects/EasyScheduler/app/src/main/res/layout/activity_alarm.xml" value="0.25" />
         <entry key="..\:/Users/jpopp/AndroidStudioProjects/EasyScheduler/app/src/main/res/layout/activity_call.xml" value="0.22" />
+        <entry key="..\:/Users/jpopp/AndroidStudioProjects/EasyScheduler/app/src/main/res/layout/activity_help.xml" value="0.1398148148148148" />
         <entry key="..\:/Users/jpopp/AndroidStudioProjects/EasyScheduler/app/src/main/res/layout/activity_link.xml" value="0.2" />
-        <entry key="..\:/Users/jpopp/AndroidStudioProjects/EasyScheduler/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/jpopp/AndroidStudioProjects/EasyScheduler/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Users/jpopp/AndroidStudioProjects/EasyScheduler/app/src/main/res/layout/activity_message.xml" value="0.21" />
+        <entry key="..\:/Users/jpopp/AndroidStudioProjects/EasyScheduler/app/src/main/res/layout/activity_preferences.xml" value="0.1796875" />
+        <entry key="..\:/Users/jpopp/AndroidStudioProjects/EasyScheduler/app/src/main/res/menu/bottom_menu.xml" value="0.2" />
+        <entry key="..\:/Users/jpopp/AndroidStudioProjects/EasyScheduler/app/src/main/res/menu/top_menu_bar.xml" value="0.22" />
       </map>
     </option>
   </component>
