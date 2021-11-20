@@ -8,6 +8,7 @@ import android.app.Activity;
 import android.content.ClipData;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Message;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -20,7 +21,9 @@ import com.google.android.material.navigation.NavigationBarView;
 public class MainActivity extends AppCompatActivity {
     private BottomNavigationView bottomNavigationView;
     private Toolbar topToolBar;
-    private BottomAppBar bottomAppBar;
+
+
+
 
 
     @Override
@@ -30,13 +33,47 @@ public class MainActivity extends AppCompatActivity {
 
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setBackground(null);
+        bottomNavigationView.setSelectedItemId(R.id.Home);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                switch(item.getItemId()){
+                    case R.id.Home:
+                        startActivity(new Intent(getApplicationContext(),MainActivity.class ));
+                        return true;
+
+
+                    case R.id.Alarm:
+                        startActivity(new Intent(getApplicationContext(),AlarmActivity.class ));
+                        overridePendingTransition(0,0);
+                        return true;
+
+
+                    case R.id.Message:
+                        startActivity(new Intent(getApplicationContext(), MessageActivity.class ));
+                        overridePendingTransition(0,0);
+                        return true;
+
+
+                    case R.id.Call:
+                        startActivity(new Intent(getApplicationContext(),CallActivity.class ));
+                        overridePendingTransition(0,0);
+                        return true;
+
+
+                    case R.id.Link:
+                        startActivity(new Intent(getApplicationContext(),LinkActivity.class ));
+                        overridePendingTransition(0,0);
+                        return true;
+                }
+
+                return false;
+            }
+        });
 
         topToolBar = findViewById(R.id.topAppBar);
         setSupportActionBar(topToolBar);
-
-        bottomAppBar = findViewById(R.id.bottomAppBar);
-        setSupportActionBar(bottomAppBar);
-
 
 
 
@@ -48,6 +85,7 @@ public class MainActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.top_menu_bar,menu);
         return true;
     }
+
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
@@ -62,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent1);
             return true;
         }
-            return super.onOptionsItemSelected(item);
+        return super.onOptionsItemSelected(item);
 
     }
 

@@ -18,6 +18,15 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/homeLabel"
+        android:text="Home"
+        android:textSize="25sp"
+        android:layout_gravity="center"
+        />
+
 
 
     <com.google.android.material.bottomappbar.BottomAppBar
