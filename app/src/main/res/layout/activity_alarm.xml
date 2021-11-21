@@ -1,41 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".AlarmActivity">
 
-    <EditText
-        android:id="@+id/hour_time"
-        android:layout_marginTop="100dp"
-        android:layout_height="40dp"
-        android:layout_width="300dp"
-        android:layout_centerHorizontal="true"
-        android:inputType="time"
-        android:hint="@string/input_hour"
-        />
-    <EditText
-        android:id="@+id/min_time"
-        android:layout_below="@+id/hour_time"
-        android:layout_marginTop="25dp"
-        android:layout_centerHorizontal="true"
-        android:layout_height="40dp"
-        android:layout_width="300dp"
-        android:inputType="time"
-        android:hint="@string/input_minute"
-        />
 
-    <Button
-        android:id="@+id/set_alarm"
-        android:layout_width="130dp"
-        android:layout_height="60dp"
-        android:layout_below="@+id/min_time"
-        android:layout_centerHorizontal="true"
-        android:textColor="#ADE5F9"
-        android:layout_marginTop="60dp"
-        android:background="@drawable/circular_corners"
-        android:text="@string/set_alarm"
-        android:textSize="15sp" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-</RelativeLayout>
+        <EditText
+            android:id="@+id/hour_time"
+            android:layout_marginTop="100dp"
+            android:layout_height="40dp"
+            android:layout_width="300dp"
+            android:layout_centerHorizontal="true"
+            android:inputType="time"
+            android:hint="@string/input_hour"
+            />
+        <EditText
+            android:id="@+id/min_time"
+            android:layout_below="@+id/hour_time"
+            android:layout_marginTop="25dp"
+            android:layout_centerHorizontal="true"
+            android:layout_height="40dp"
+            android:layout_width="300dp"
+            android:inputType="time"
+            android:hint="@string/input_minute"
+            />
+
+        <Button
+            android:id="@+id/set_alarm"
+            android:layout_width="130dp"
+            android:layout_height="60dp"
+            android:layout_below="@+id/min_time"
+            android:layout_centerHorizontal="true"
+            android:textColor="#ADE5F9"
+            android:layout_marginTop="60dp"
+            android:background="@drawable/circular_corners"
+            android:text="@string/set_alarm"
+            android:textSize="15sp" />
+
+    </RelativeLayout>
+
+
+
+    <!--bottom app bar -->
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/bottomAppBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:fadeScrollbars="true"
+        app:hideOnScroll="true">
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        app:menu="@menu/bottom_menu"
+        android:background="@android:color/transparent"
+        android:layout_marginEnd="20dp"
+        app:itemIconSize="27dp"
+        app:itemTextColor="@color/bottom_item_color"
+        app:itemIconTint="@color/bottom_item_color"
+        app:labelVisibilityMode="labeled"/>
+
+    </com.google.android.material.bottomappbar.BottomAppBar>
+    <!--bottom app bar -->
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

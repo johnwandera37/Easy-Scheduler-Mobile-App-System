@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,44 +7,79 @@
     android:orientation="vertical"
     tools:context=".MessageActivity">
 
-    <EditText
-        android:id="@+id/enterNumber"
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:id="@+id/enterNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginEnd="20dp"
+            android:autofillHints="phone"
+            android:ems="10"
+            android:hint="@string/enter_phone_number"
+            android:inputType="number"
+            android:minHeight="48dp" />
+
+
+        <EditText
+            android:id="@+id/enterMessage"
+            android:layout_below="@+id/enterNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="70dp"
+            android:layout_marginEnd="20dp"
+            android:ems="10"
+            android:gravity="start|top"
+            android:hint="@string/type_your_message"
+            android:inputType="textMultiLine"
+            android:minHeight="48dp" />
+
+
+        <Button
+            android:id="@+id/sendMessage"
+            android:layout_below="@+id/enterMessage"
+            android:layout_width="130dp"
+            android:layout_height="60dp"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="60dp"
+            android:background="@drawable/circular_corners"
+            android:textColor="#ADE5F9"
+            android:onClick="sendSMS"
+            android:text="@string/send"
+            android:textSize="15sp" />
+
+    </RelativeLayout>
+
+
+    <!--bottom app bar -->
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/bottomAppBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="80dp"
-        android:layout_marginEnd="20dp"
-        android:autofillHints="phone"
-        android:ems="10"
-        android:hint="@string/enter_phone_number"
-        android:inputType="number"
-        android:minHeight="48dp" />
+        android:layout_gravity="bottom"
+        android:fadeScrollbars="true"
+        app:hideOnScroll="true">
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNavigationView"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            app:menu="@menu/bottom_menu"
+            android:background="@android:color/transparent"
+            android:layout_marginEnd="20dp"
+            app:itemIconSize="27dp"
+            app:itemTextColor="@color/bottom_item_color"
+            app:itemIconTint="@color/bottom_item_color"
+            app:labelVisibilityMode="labeled"/>
+
+    </com.google.android.material.bottomappbar.BottomAppBar>
+    <!--bottom app bar -->
 
 
-    <EditText
-        android:id="@+id/enterMessage"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="70dp"
-        android:layout_marginEnd="20dp"
-        android:ems="10"
-        android:gravity="start|top"
-        android:hint="@string/type_your_message"
-        android:inputType="textMultiLine"
-        android:minHeight="48dp" />
 
-
-    <Button
-        android:id="@+id/sendMessage"
-        android:layout_width="130dp"
-        android:layout_height="60dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="60dp"
-        android:background="@drawable/circular_corners"
-        android:textColor="#ADE5F9"
-        android:onClick="sendSMS"
-        android:text="@string/send"
-        android:textSize="15sp" />
-
-</LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
