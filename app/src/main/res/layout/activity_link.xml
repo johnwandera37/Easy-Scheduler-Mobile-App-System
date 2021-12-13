@@ -6,11 +6,55 @@
     android:layout_height="match_parent"
     tools:context=".LinkActivity">
 
-    <RelativeLayout
+    <!-- Link Title -->
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/topAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize">
 
-    </RelativeLayout>
+            <TextView
+                android:id="@+id/toolBarTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+                android:text="@string/link"
+                />
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+    <!-- Link Title -->
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:id="@+id/textInputLayoutLink"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="20dp"
+        app:boxStrokeColor="@color/label_checked"
+        app:hintTextColor="@color/hint_focused"
+        app:helperText="Required*"
+        app:startIconDrawable="@drawable/ic_link"
+        app:startIconTint="@color/drawable_icon_color"
+        app:helperTextTextColor="#FF1503"
+        app:endIconMode="clear_text"
+        android:layout_marginStart="20dp">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textInputBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Link"
+            android:autoLink="all"
+            android:clickable="true"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
 
 
     <!--bottom app bar -->
@@ -35,6 +79,7 @@
             app:labelVisibilityMode="labeled"/>
 
     </com.google.android.material.bottomappbar.BottomAppBar>
+
     <!--bottom app bar -->
 
 

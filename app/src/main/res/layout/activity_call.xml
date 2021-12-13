@@ -7,34 +7,75 @@
     android:orientation="vertical"
     tools:context=".CallActivity">
 
+    <!-- Call Title -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/topAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize">
+
+            <TextView
+                android:id="@+id/toolBarTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+                android:text="@string/call"
+                />
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+    <!-- Call Title -->
+
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <EditText
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:id="@+id/textInputLayoutNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:layout_marginEnd="20dp"
+            app:startIconDrawable="@drawable/ic_call"
+            app:startIconTint="@color/drawable_icon_color"
+            app:boxStrokeColor="@color/label_checked"
+            app:hintTextColor="@color/hint_focused"
+            app:helperText="Required*"
+            app:helperTextTextColor="#FF1503"
+            app:prefixText="+254"
+            app:prefixTextColor="@color/teal_200"
+            app:endIconMode="clear_text"
+            app:counterEnabled="true"
+            app:counterMaxLength="10"
+            android:layout_marginStart="20dp">
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/enterCallNumber"
             android:layout_width="match_parent"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="90dp"
-            android:autofillHints="phone"
-            android:ems="10"
-            android:hint="@string/enter_phone_digits"
+            android:hint="phone"
             android:inputType="number"
-            android:minHeight="48dp"
             />
+        </com.google.android.material.textfield.TextInputLayout>
+
 
         <Button
             android:id="@+id/scheduleCall"
             android:layout_width="130dp"
             android:layout_height="60dp"
-            android:layout_below="@+id/enterCallNumber"
+            android:layout_below="@+id/textInputLayoutNumber"
             android:layout_centerInParent="true"
             android:layout_marginTop="78dp"
             android:background="@drawable/circular_corners"
+            android:backgroundTint="@android:color/transparent"
             android:text="@string/call_now"
-            android:textColor="#ADE5F9"
+            android:textColor="#0563EF"
             android:textSize="15sp" />
+
 
 
     </RelativeLayout>

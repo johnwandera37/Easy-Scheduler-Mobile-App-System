@@ -8,16 +8,40 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
+import android.widget.Toast;
+
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
     private Toolbar topToolBar;
+    private long backPressed;
+    private Toast backToast;
 
+    //back press button
+    @Override
+    public void onBackPressed() {
+
+        if(backPressed + 2000 > System.currentTimeMillis()){
+            backToast.cancel();
+            super.onBackPressed();
+        }else{
+           backToast = Toast.makeText(getBaseContext(), "Press back again to exit",Toast.LENGTH_SHORT);
+           backToast.show();
+        }
+        backPressed = System.currentTimeMillis();
+
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+        
+
+
 
 //for bottom navigation items to be appear clearly
 
@@ -32,31 +56,31 @@ public class MainActivity extends AppCompatActivity {
 
                 switch(item.getItemId()){
                     case R.id.Home:
-                        return true;
+                        break;
 
 
                     case R.id.Alarm:
                         startActivity(new Intent(getApplicationContext(),AlarmActivity.class ));
                         overridePendingTransition(0,0);
-                        return true;
+                        break;
 
 
                     case R.id.Message:
                         startActivity(new Intent(getApplicationContext(), MessageActivity.class ));
                         overridePendingTransition(0,0);
-                        return true;
+                        break;
 
 
                     case R.id.Call:
                         startActivity(new Intent(getApplicationContext(),CallActivity.class ));
                         overridePendingTransition(0,0);
-                        return true;
+                        break;
 
 
                     case R.id.Link:
                         startActivity(new Intent(getApplicationContext(),LinkActivity.class ));
                         overridePendingTransition(0,0);
-                        return true;
+                        break;
                 }
 
                 return false;
@@ -65,9 +89,18 @@ public class MainActivity extends AppCompatActivity {
         //ends here!
 
 
-        //for top bar menu items to work
+        //for top bar menu items to work, setting topToolBar to ActionBar
         topToolBar = findViewById(R.id.topAppBar);
         setSupportActionBar(topToolBar);
+        //hiding default app title
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        //getting custom title
+        TextView mTitle = (TextView) topToolBar.findViewById(R.id.toolBarTitle);
+        //Display icon in toolbar
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setLogo(R.drawable.ic_baseline_home_24);
+        getSupportActionBar().setDisplayUseLogoEnabled(true);
+
 
 
 

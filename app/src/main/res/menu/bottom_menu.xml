@@ -6,35 +6,35 @@
         android:id="@+id/Home"
         android:icon="@drawable/ic_home"
         android:title="Home"
-        app:showAsAction="ifRoom"
+        app:showAsAction="always"
         />
 
     <item
         android:id="@+id/Alarm"
         android:icon="@drawable/ic_alarm"
         android:title="Alarm"
-        app:showAsAction="ifRoom"
+        app:showAsAction="always"
         />
 
     <item
         android:id="@+id/Message"
         android:icon="@drawable/ic_message"
         android:title="Message"
-        app:showAsAction="ifRoom"
+        app:showAsAction="always"
         />
 
     <item
         android:id="@+id/Call"
         android:icon="@drawable/ic_call"
         android:title="Call"
-        app:showAsAction="ifRoom"
+        app:showAsAction="always"
         />
 
     <item
         android:id="@+id/Link"
         android:icon="@drawable/ic_link"
         android:title="Link"
-        app:showAsAction="ifRoom"
+        app:showAsAction="always"
         />
 
 

@@ -2,19 +2,35 @@ package com.example.easyScheduler;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.textfield.TextInputLayout;
 
 public class LinkActivity extends AppCompatActivity {
+    private Toolbar topToolBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_link);
+
+        //setting topToolBar to ActionBar
+        topToolBar = findViewById(R.id.topAppBar);
+        setSupportActionBar(topToolBar);
+        //hiding default app title
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        //getting custom title
+        TextView mTitle = (TextView) topToolBar.findViewById(R.id.toolBarTitle);
+        //Display icon in toolbar
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setLogo(R.drawable.ic_baseline_link_24);
+        getSupportActionBar().setDisplayUseLogoEnabled(true);
 
 
         //for bottom navigation items to be appear clearly

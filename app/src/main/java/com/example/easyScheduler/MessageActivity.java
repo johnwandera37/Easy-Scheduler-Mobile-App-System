@@ -2,6 +2,7 @@ package com.example.easyScheduler;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
@@ -12,19 +13,34 @@ import android.telephony.SmsManager;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.textfield.TextInputEditText;
 
 public class MessageActivity extends AppCompatActivity {
-    private EditText editNumber;
-    private EditText editMessage;
+    private Toolbar topToolBar;
+    private TextInputEditText editNumber;
+    private TextInputEditText editMessage;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_message);
+
+        //setting topToolBar to ActionBar
+        topToolBar = findViewById(R.id.topAppBar);
+        setSupportActionBar(topToolBar);
+        //hiding default app title
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        //getting custom title
+        TextView mTitle = (TextView) topToolBar.findViewById(R.id.toolBarTitle);
+        //Display icon in toolbar
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setLogo(R.drawable.ic_baseline_message_24);
+        getSupportActionBar().setDisplayUseLogoEnabled(true);
 
 
 //for bottom navigation items to be appear clearly

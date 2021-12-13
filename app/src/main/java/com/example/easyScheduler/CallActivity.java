@@ -4,6 +4,7 @@ import static android.content.Intent.ACTION_CALL;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
@@ -15,11 +16,15 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 
 public class CallActivity extends AppCompatActivity {
-    private EditText editText;
+    private Toolbar topToolBar;
+    private TextInputEditText editText;
     private Button buttonCall;
 
 
@@ -27,6 +32,18 @@ public class CallActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_call);
+
+        //setting topToolBar to ActionBar
+        topToolBar = findViewById(R.id.topAppBar);
+        setSupportActionBar(topToolBar);
+        //hiding default app title
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        //getting custom title
+        TextView mTitle = (TextView) topToolBar.findViewById(R.id.toolBarTitle);
+        //Display icon in toolbar
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setLogo(R.drawable.ic_baseline_call_24);
+        getSupportActionBar().setDisplayUseLogoEnabled(true);
 
 
         //for bottom navigation items to be appear clearly
@@ -73,6 +90,8 @@ public class CallActivity extends AppCompatActivity {
             }
         });
         //ends here!
+
+
 
 
 

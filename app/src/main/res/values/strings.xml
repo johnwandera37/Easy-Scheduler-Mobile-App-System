@@ -1,26 +1,24 @@
 <resources>
-    //home interface
-    <string name="app_name">EasyScheduler</string>
-    <string name="alarm">ALARM</string>
-    <string name="sms">SMS</string>
-    <string name="call">CALL</string>
-    <string name="link">LINK</string>
-
-    //message module
-    <string name="enter_phone_number">enter phone number</string>
-    <string name="type_your_message">type your message</string>
-    <string name="send">send</string>
+  //home interface
+  <string name="app_name">EasyScheduler</string>
 
 
-    //call module
-    <string name="call_now">Call Now</string>
-    <string name="enter_phone_digits">enter phone digits</string>
+  //message module
+  <string name="send">send</string>
 
-    //welcome msg
-    <string name="welcome_nchoose_what_you_want_to_schedule">Welcome \nchoose what you want to schedule</string>
 
-    //alarm module
-    <string name="set_alarm">Set Alarm</string>
-    <string name="input_hour">input hour</string>
-    <string name="input_minute">input minute</string>
+  //call module
+  <string name="call_now">Call Now</string>
+
+
+  //alarm module
+  <string name="set_alarm">Set Alarm</string>
+  <string name="Alarm">Alarm</string>
+
+  //Home tittle
+  <string name="home">Home</string>
+  <string name="call">Call</string>
+  <string name="message">Message</string>
+  <string name="link">Link</string>
+
 </resources>

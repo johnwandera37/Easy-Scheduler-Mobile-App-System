@@ -78,12 +78,13 @@ The system will use the following technologies
 - i3 or AMD CPU supporting windows Hypervisor
 - 64-bit Microsoft Windows 10
 - Minimum 4GB RAM
-- Free Storage of at least 10GB
+- Free Storage of at least 10GB for Android Studio
 
 ### Non-Functional Requirements
 
 - The system should be simple and light weight for ease access
 - Should be responsive to different screen sizes
+- should be able to change themes on dark and light mode
 
 ### Functional Requirements
 
@@ -94,7 +95,7 @@ This module consists of the following functional requirements.
 - It should be able to enable a user to write and send messages. It should have the capabilities of accessing the default messaging app in order to send the messages.
 - Should provide a button to schedule the message to be sent in the future.
 - Should be able to provide proper alert once the process is completed like a Toast notification.
-- Should be able to save message history in SQLite database of the default messaging app. Such that when a message is sent it appears among the threads of the default messaging app.
+- Should be able to save message history in SQLite database and that of the default messaging app. When a message is sent it should appear among the threads of the default messaging app.
 - Prompt to grant appropriate permissions like accessing contacts, reading phone states, sending of messages etc.
 
 #### Call scheduler

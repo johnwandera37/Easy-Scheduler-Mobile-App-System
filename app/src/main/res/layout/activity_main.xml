@@ -14,9 +14,29 @@
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/topAppBar"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"/>
+            android:layout_height="?attr/actionBarSize">
+            <TextView
+                android:id="@+id/toolBarTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+                android:text="@string/home"
+                />
 
+        </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
+    <!--Top app bar -->
+
+    <TextView
+        android:id="@+id/homeLabel"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="60dp"
+        android:text="Scheduled Events"
+        android:textAlignment="center"
+        android:padding="10dp"
+        android:textSize="20sp" />
+
 
 
 
@@ -27,18 +47,9 @@
         android:paddingBottom="100dp"
         android:clipToPadding="false">
 
-        <!-- Scrollable content -->
-
     </androidx.core.widget.NestedScrollView>
+    <!-- Scrollable content -->
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/homeLabel"
-        android:text="Home"
-        android:textSize="25sp"
-        android:layout_gravity="center"
-        />
 
 
     <!--bottom app bar -->
