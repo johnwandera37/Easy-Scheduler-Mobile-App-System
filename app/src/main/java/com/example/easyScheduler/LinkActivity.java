@@ -3,22 +3,41 @@ package com.example.easyScheduler;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.textfield.TextInputLayout;
 
 public class LinkActivity extends AppCompatActivity {
     private Toolbar topToolBar;
+    RecyclerView recyclerView;
+    FloatingActionButton add_button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_link);
+
+        recyclerView = findViewById(R.id.recyclerView1);
+
+        //working of Floating button
+        add_button = findViewById(R.id.add_btn2);
+        add_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LinkActivity.this, AddLinkActivity.class);
+                startActivity(intent);
+
+            }
+        });
+
 
         //setting topToolBar to ActionBar
         topToolBar = findViewById(R.id.topAppBar);

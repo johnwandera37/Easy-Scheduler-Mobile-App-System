@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.Manifest;
 import android.content.Intent;
@@ -19,19 +20,36 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
 public class CallActivity extends AppCompatActivity {
     private Toolbar topToolBar;
-    private TextInputEditText editText;
-    private Button buttonCall;
+    RecyclerView recyclerView;
+    FloatingActionButton add_button;
+    /*private TextInputEditText editText;
+    private Button buttonCall;*/
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_call);
+
+        recyclerView = findViewById(R.id.recyclerView1);
+
+        //working of Floating button
+        add_button = findViewById(R.id.add_btn1);
+        add_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(CallActivity.this, AddCallActivity.class);
+                startActivity(intent);
+
+            }
+        });
+
 
         //setting topToolBar to ActionBar
         topToolBar = findViewById(R.id.topAppBar);
@@ -95,7 +113,7 @@ public class CallActivity extends AppCompatActivity {
 
 
 
-        //working of the Call
+       /* //working of the Call
         ActivityCompat.requestPermissions(this, new String[]
                         {Manifest.permission.CALL_PHONE, Manifest.permission.READ_CALL_LOG},
                 PackageManager.PERMISSION_GRANTED);
@@ -110,6 +128,6 @@ public class CallActivity extends AppCompatActivity {
                 startActivity(callIntent);
 
             }
-        });
+        });*/
     }
 }

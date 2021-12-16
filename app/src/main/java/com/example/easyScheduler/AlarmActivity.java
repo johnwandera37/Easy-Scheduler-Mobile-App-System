@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextClock;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,6 +21,7 @@ import com.google.android.material.textfield.TextInputEditText;
 import java.time.Clock;
 
 public class AlarmActivity extends AppCompatActivity {
+
     private TextInputEditText HourEditText;
     private TextInputEditText MinEditText;
     private Button SetAlarmBtn;
@@ -32,6 +34,7 @@ public class AlarmActivity extends AppCompatActivity {
         setContentView(R.layout.activity_alarm);
 
         //setting topToolBar to ActionBar
+
         topToolBar = findViewById(R.id.topAppBar);
         setSupportActionBar(topToolBar);
         //hiding default app title
@@ -45,8 +48,8 @@ public class AlarmActivity extends AppCompatActivity {
 
 
 
-//for bottom navigation items to be appear clearly
 
+//for bottom navigation items to be appear clearly
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setBackground(null);
 
@@ -58,17 +61,18 @@ public class AlarmActivity extends AppCompatActivity {
 
                 switch(item.getItemId()){
                     case R.id.Home:
-                        startActivity(new Intent(getApplicationContext(),MainActivity.class ));
+                        startActivity(new Intent(getApplicationContext(), MainActivity.class ));
                         overridePendingTransition(0,0);
                         return true;
 
 
                     case R.id.Alarm:
+
                         return true;
 
 
                     case R.id.Message:
-                        startActivity(new Intent(getApplicationContext(), MessageActivity.class ));
+                        startActivity(new Intent(getApplicationContext(),AlarmActivity.class ));
                         overridePendingTransition(0,0);
                         return true;
 

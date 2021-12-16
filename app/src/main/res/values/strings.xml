@@ -1,24 +1,24 @@
 <resources>
-  //home interface
-  <string name="app_name">EasyScheduler</string>
+    //home interface
+    <string name="app_name">EasyScheduler</string>
 
 
-  //message module
-  <string name="send">send</string>
+    //message module
+    <string name="send">send</string>
 
 
-  //call module
-  <string name="call_now">Call Now</string>
+    //call module
+    <string name="call_now">Call Now</string>
 
 
-  //alarm module
-  <string name="set_alarm">Set Alarm</string>
-  <string name="Alarm">Alarm</string>
+    //alarm module
+    <string name="set_alarm">Set Alarm</string>
+    <string name="Alarm">Alarm</string>
 
-  //Home tittle
-  <string name="home">Home</string>
-  <string name="call">Call</string>
-  <string name="message">Message</string>
-  <string name="link">Link</string>
+    //Home tittle
+    <string name="home">Home</string>
+    <string name="call">Call</string>
+    <string name="message">Message</string>
+    <string name="link">Link</string>
 
 </resources>

@@ -1,13 +1,16 @@
 package com.example.easyScheduler;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.telephony.SmsManager;
 import android.view.MenuItem;
@@ -17,18 +20,37 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.textfield.TextInputEditText;
+
+import java.util.ArrayList;
 
 public class MessageActivity extends AppCompatActivity {
     private Toolbar topToolBar;
-    private TextInputEditText editNumber;
-    private TextInputEditText editMessage;
+    RecyclerView recyclerView;
+    FloatingActionButton add_button;
+    DatabaseHelper DB;
+    ArrayList<String> message_id, message_number, message_message;
+    CustomAdapter customAdapter;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_message);
+
+        recyclerView = findViewById(R.id.recyclerView);
+
+        //working of Floating button
+        add_button = findViewById(R.id.add_btn);
+        add_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MessageActivity.this, AddMessageActivity.class);
+                startActivity(intent);
+
+            }
+        });
 
         //setting topToolBar to ActionBar
         topToolBar = findViewById(R.id.topAppBar);
@@ -44,7 +66,6 @@ public class MessageActivity extends AppCompatActivity {
 
 
 //for bottom navigation items to be appear clearly
-
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setBackground(null);
 
@@ -89,20 +110,46 @@ public class MessageActivity extends AppCompatActivity {
         //ends here!
 
 
+        //initializing object DB its context(displaying results to array in recyclerView)
+        DB = new DatabaseHelper(MessageActivity.this);
+        message_id = new ArrayList<>();
+        message_number = new ArrayList<>();
+        message_message = new ArrayList<>();
+        /*date = new ArrayList<>();
+        time = new ArrayList<>();*/
 
+        storeDataInArray();//taking data in array from the method, create customAdapter class for recyclerView
 
-        ActivityCompat.requestPermissions(MessageActivity.this,new String[]
-                {Manifest.permission.SEND_SMS,Manifest.permission.READ_SMS}, PackageManager.PERMISSION_GRANTED);
-
-        editNumber = findViewById(R.id.enterNumber);
-        editMessage = findViewById(R.id.enterMessage);
+        //initialize the CustomAdapter, passing its parameters(last)
+        customAdapter = new CustomAdapter(MessageActivity.this,this, message_id, message_number, message_message);
+        //taking custom adapter into recyclerView
+        recyclerView.setAdapter(customAdapter);
 
     }
-    public void sendSMS (View view){
-        String message = editMessage.getText().toString();
-        String number = editNumber.getText().toString();
-        SmsManager mySmsManger = SmsManager.getDefault();
-        mySmsManger.sendTextMessage(number, null, message,null,null);
-        Toast.makeText(this,"Message Sent",Toast.LENGTH_SHORT).show();
+
+    //override method for activity to restart
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == 1){
+            recreate();
+        }
+    }
+
+    //creating method to get readAllData from cursor in DataBaseHelper
+    void storeDataInArray(){
+        Cursor cursor = DB.readAllData();
+        if(cursor.getCount() == 0){
+            Toast.makeText(this, "No Data", Toast.LENGTH_SHORT).show();
+        }else {
+            while(cursor.moveToNext()){
+                message_id.add(cursor.getString(0));
+                message_number.add(cursor.getString(1));
+                message_message.add(cursor.getString(2));
+                /*date.add(cursor.getString(3));
+                time.add(cursor.getString(4));*/
+                //the number means moving from column o to 4
+            }
+        }
     }
 }
