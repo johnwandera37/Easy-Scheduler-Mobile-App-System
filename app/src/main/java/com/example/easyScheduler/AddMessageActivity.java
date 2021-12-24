@@ -1,15 +1,20 @@
 package com.example.easyScheduler;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
+import android.Manifest;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.telephony.SmsManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
 
@@ -20,20 +25,40 @@ import java.util.Objects;
 public class AddMessageActivity extends AppCompatActivity {
     TextInputEditText addNumber, addMessage;
     DatePickerDialog datePickerDialog;
-    Button addButton, dateBtn, timeBtn;
+    Button addButton, dateBtn, timeBtn, sendButton;
     int hour, minute;//for time picker
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_message);
+
+        ActivityCompat.requestPermissions(AddMessageActivity.this,new String[]
+                {Manifest.permission.SEND_SMS,Manifest.permission.READ_SMS}, PackageManager.PERMISSION_GRANTED);
+
         initDatePicker();
 
+        sendButton = findViewById(R.id.sendBtn);
         addNumber = findViewById(R.id.enterNumber);
         addMessage = findViewById(R.id.enterMessage);
         addButton = findViewById(R.id.addDetails);
         dateBtn = findViewById(R.id.selectDate);
         timeBtn = findViewById(R.id.selectTime);
+
+        //sending message
+        sendButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String number = addNumber.getText().toString();
+                String message = addMessage.getText().toString();
+                SmsManager mySmsManger = SmsManager.getDefault();
+                mySmsManger.sendTextMessage(number, null, message,null,null);
+                Toast.makeText(AddMessageActivity.this,"Message Sent",Toast.LENGTH_SHORT).show();
+
+            }
+        });
+        //sending message
+
 
         //onClick listener to access DatabaseHelper
         addButton.setOnClickListener(new View.OnClickListener() {
@@ -115,7 +140,7 @@ public class AddMessageActivity extends AppCompatActivity {
         int month = cal.get(Calendar.MONTH);
         int day = cal.get(Calendar.DAY_OF_MONTH);
 
-        int style = AlertDialog.THEME_DEVICE_DEFAULT_LIGHT;
+        int style = AlertDialog.THEME_DEVICE_DEFAULT_DARK;
         datePickerDialog = new DatePickerDialog(this,style, dateSetListener, year, month, day);
 
 

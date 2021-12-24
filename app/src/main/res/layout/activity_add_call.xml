@@ -87,5 +87,16 @@
         android:textColor="#0563EF"
         android:textSize="15sp" />
 
+    <Button
+        android:id="@+id/calling"
+        android:layout_width="130dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/addDetailsCall"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="20dp"
+        android:text="Call now"
+        android:textColor="#0563EF"
+        android:textSize="15sp" />
+
 
 </RelativeLayout>

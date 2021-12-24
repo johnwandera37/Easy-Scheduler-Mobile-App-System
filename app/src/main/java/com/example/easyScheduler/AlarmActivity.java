@@ -67,12 +67,11 @@ public class AlarmActivity extends AppCompatActivity {
 
 
                     case R.id.Alarm:
-
                         return true;
 
 
                     case R.id.Message:
-                        startActivity(new Intent(getApplicationContext(),AlarmActivity.class ));
+                        startActivity(new Intent(getApplicationContext(),MessageActivity.class ));
                         overridePendingTransition(0,0);
                         return true;
 

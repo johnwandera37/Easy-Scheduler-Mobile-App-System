@@ -1,10 +1,17 @@
 package com.example.easyScheduler;
 
-import androidx.appcompat.app.AppCompatActivity;
+import static android.content.Intent.ACTION_CALL;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+
+import android.Manifest;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -17,9 +24,10 @@ import java.util.Calendar;
 import java.util.Locale;
 
 public class AddCallActivity extends AppCompatActivity {
-    TextInputEditText addNumber;
+    private TextInputEditText editText;
+    private Button buttonCall;
     DatePickerDialog datePickerDialog;
-    Button addButton, dateBtn, timeBtn;
+    Button dateBtn, timeBtn;
     int hour, minute;//for time picker
 
     @Override
@@ -28,9 +36,10 @@ public class AddCallActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_call);
         initDatePicker();
 
-        addNumber = findViewById(R.id.enterNumber1);
+        //for adding to database and functioning of date and time pickers
         dateBtn = findViewById(R.id.selectDate1);
         timeBtn = findViewById(R.id.selectTime1);
+
 
 
         //setting button to show today's date(DatePicker)
@@ -67,6 +76,28 @@ public class AddCallActivity extends AppCompatActivity {
             }
         });
 
+
+
+        //working of the Call
+        ActivityCompat.requestPermissions(this, new String[]
+                        {
+                                Manifest.permission.CALL_PHONE, Manifest.permission.READ_CALL_LOG},
+                PackageManager.PERMISSION_GRANTED);
+        editText = findViewById(R.id.enterNumber1);
+        buttonCall = findViewById(R.id.calling);
+        buttonCall.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String number = editText.getText().toString();
+                Intent callIntent = new Intent(ACTION_CALL);
+                callIntent.setData(Uri.parse("tel:"+number));
+                startActivity(callIntent);
+
+            }
+        });
+
+
+
     }
 
 
@@ -98,7 +129,7 @@ public class AddCallActivity extends AppCompatActivity {
         int month = cal.get(Calendar.MONTH);
         int day = cal.get(Calendar.DAY_OF_MONTH);
 
-        int style = AlertDialog.THEME_DEVICE_DEFAULT_LIGHT;
+        int style = AlertDialog.THEME_DEVICE_DEFAULT_DARK;
         datePickerDialog = new DatePickerDialog(this,style, dateSetListener, year, month, day);
 
 
@@ -139,5 +170,6 @@ public class AddCallActivity extends AppCompatActivity {
         return "JAN";
     }
     //for Date Picker
+
 
 }

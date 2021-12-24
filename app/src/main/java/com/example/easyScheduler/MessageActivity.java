@@ -30,7 +30,7 @@ public class MessageActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     FloatingActionButton add_button;
     DatabaseHelper DB;
-    ArrayList<String> message_id, message_number, message_message;
+    ArrayList<String> message_id, message_number, message_message, date, time;
     CustomAdapter customAdapter;
 
 
@@ -115,13 +115,13 @@ public class MessageActivity extends AppCompatActivity {
         message_id = new ArrayList<>();
         message_number = new ArrayList<>();
         message_message = new ArrayList<>();
-        /*date = new ArrayList<>();
-        time = new ArrayList<>();*/
+        date = new ArrayList<>();
+        time = new ArrayList<>();
 
         storeDataInArray();//taking data in array from the method, create customAdapter class for recyclerView
 
         //initialize the CustomAdapter, passing its parameters(last)
-        customAdapter = new CustomAdapter(MessageActivity.this,this, message_id, message_number, message_message);
+        customAdapter = new CustomAdapter(MessageActivity.this,this, message_id, message_number, message_message, date, time);
         //taking custom adapter into recyclerView
         recyclerView.setAdapter(customAdapter);
 
@@ -146,8 +146,8 @@ public class MessageActivity extends AppCompatActivity {
                 message_id.add(cursor.getString(0));
                 message_number.add(cursor.getString(1));
                 message_message.add(cursor.getString(2));
-                /*date.add(cursor.getString(3));
-                time.add(cursor.getString(4));*/
+                date.add(cursor.getString(3));
+                time.add(cursor.getString(4));
                 //the number means moving from column o to 4
             }
         }

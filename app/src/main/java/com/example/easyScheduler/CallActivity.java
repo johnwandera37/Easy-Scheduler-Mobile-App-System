@@ -28,8 +28,7 @@ public class CallActivity extends AppCompatActivity {
     private Toolbar topToolBar;
     RecyclerView recyclerView;
     FloatingActionButton add_button;
-    /*private TextInputEditText editText;
-    private Button buttonCall;*/
+
 
 
     @Override
@@ -112,22 +111,5 @@ public class CallActivity extends AppCompatActivity {
 
 
 
-
-       /* //working of the Call
-        ActivityCompat.requestPermissions(this, new String[]
-                        {Manifest.permission.CALL_PHONE, Manifest.permission.READ_CALL_LOG},
-                PackageManager.PERMISSION_GRANTED);
-        editText = findViewById(R.id.enterCallNumber);
-        buttonCall = findViewById(R.id.scheduleCall);
-        buttonCall.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String number = editText.getText().toString();
-                Intent callIntent = new Intent(ACTION_CALL);
-                callIntent.setData(Uri.parse("tel:"+number));
-                startActivity(callIntent);
-
-            }
-        });*/
     }
 }
